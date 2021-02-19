@@ -7,7 +7,7 @@ public class RegexPattern
 	public void Email(String emailId)
 	{
 		//------------Regex------------------
-		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?@[a-z]+[.][a-z]{2,4}$";
+		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2})?$";
 
 		Pattern patternChecker = Pattern.compile(regex);
 		Matcher matchChecker = patternChecker.matcher(emailId);
