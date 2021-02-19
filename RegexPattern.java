@@ -4,20 +4,19 @@ import java.util.regex.Matcher;
 
 public class RegexPattern
 {
-
-	public void checkPinCode(String pincode)
+	public void Email(String emailId)
 	{
 		//------------Regex------------------
-		String regex = "^[0-9]{3}[ ]?[0-9]{3}$";
+		String regex = "^[a-z]{3}$";
 
 		Pattern patternChecker = Pattern.compile(regex);
-		Matcher matchChecker = patternChecker.matcher(pincode);
+		Matcher matchChecker = patternChecker.matcher(emailId);
 
 		//-------------Check valid or Not-----
 		if(matchChecker.matches())
-			System.out.println("Valid PinCode");
+			System.out.println("Valid Email");
 		else
-			System.out.println("InValid PinCode");
+			System.out.println("InValid Email");
 	}
 	public static void main(String args [])
 	{
@@ -25,9 +24,9 @@ public class RegexPattern
 
 		RegexPattern code = new RegexPattern();
 
-		System.out.println("Enter PinCode:-");
-		String pinCode = scanReader.nextLine();
-		code.checkPinCode(pinCode);
+		System.out.println("Enter Email:-");
+		String email = scanReader.nextLine();
+		code.Email(email);
 
 		scanReader.close();
 	}
