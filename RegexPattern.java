@@ -8,7 +8,7 @@ public class RegexPattern
 	public void checkPinCode(String pincode)
 	{
 		//------------Regex------------------
-		String regex = "^!(a-zA-Z)|[0-9]{6}$";
+		String regex = "^[0-9]{6}|!(a-zA-Z)$";
 
 		Pattern patternChecker = Pattern.compile(regex);
 		Matcher matchChecker = patternChecker.matcher(pincode);
