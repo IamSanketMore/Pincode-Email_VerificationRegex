@@ -7,20 +7,17 @@ public class RegexPattern
 
 	public void checkPinCode(String pincode)
 	{
-		String regex = "[0-9]{6}";
+		//------------Regex------------------
+		String regex = "^!(a-zA-Z)|[0-9]{6}$";
 
 		Pattern patternChecker = Pattern.compile(regex);
 		Matcher matchChecker = patternChecker.matcher(pincode);
 
+		//-------------Check valid or Not-----
 		if(matchChecker.matches())
-		{
 			System.out.println("Valid PinCode");
-		}
 		else
-		{
 			System.out.println("InValid PinCode");
-		}
-		
 	}
 	public static void main(String args [])
 	{
@@ -31,7 +28,7 @@ public class RegexPattern
 		System.out.println("Enter PinCode:-");
 		String pinCode = scanReader.nextLine();
 		code.checkPinCode(pinCode);
-		
+
 		scanReader.close();
 	}
 }
